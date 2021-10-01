@@ -1,5 +1,10 @@
 <template>
-  <h1>ㅎㅇㅋㅋ</h1>
+  <h1>
+    Hello
+  </h1>
+  <h1 ref="world">
+    World
+  </h1>
 </template>
 
 <style scoped lang="scss">
