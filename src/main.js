@@ -1,4 +1,9 @@
-import * as Vue from 'vue'
-import App from './App'
+import {createApp} from 'vue'
+import App from '~/App'
+import Btn from '~/components/Btn'
 
-Vue.createApp(App).mount('#app')
+const app = createApp(App)
+// 전역 등록
+app.component('Btn', Btn) 
+app.mount('#app')
+
