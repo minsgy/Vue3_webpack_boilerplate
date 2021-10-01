@@ -2,7 +2,10 @@
   <h1>
     {{ msg }}
   </h1>
-  <Hello />
+  <Hello 
+    class="hello"
+    style="font-size: 100px;"
+    @click="msg += '!'" />
 </template>
 <script>
 import Hello from '~/components/Hello'
