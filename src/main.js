@@ -1,4 +1,7 @@
 import * as Vue from 'vue'
 import App from './App'
+import World from '~/components/World'
+const app = Vue.createApp(App)
 
-Vue.createApp(App).mount('#app')
+app.component('World', World)
+app.mount('#app')
