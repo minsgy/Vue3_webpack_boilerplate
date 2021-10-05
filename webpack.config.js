@@ -42,7 +42,21 @@ module.exports = {
           'vue-style-loader',
           'css-loader', 
           'postcss-loader',
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              additionalData: `
+                @use "sass:color";
+                @use "sass:list";
+                @use "sass:map";
+                @use "sass:math";
+                @use "sass:meta";
+                @use "sass:selector";
+                @use "sass:string";
+                @import "~/scss/_variables";
+              `
+            }
+          }
         ],
       },
     ],
@@ -51,7 +65,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlPlugin({
       // path.resolve 자체적으로 실행되긴합니다! 어떠한 html 파일을 사용할 건지 지정해줍니다.
-      template: './index.html',
+      template: './src/index.html',
     }),
     new CopyPlugin({
       // static 폴더에 있는 데이터를 to로 보냅니다 ( 자동으로 dist )
