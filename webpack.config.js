@@ -17,6 +17,8 @@ module.exports = {
     // path.resolve 필수적임.
     // filename 생략시 entry 파일과 이름이 같습니다.
     path: path.resolve(__dirname, 'dist'),
+    // SPA 과정 브라우저 라우터 시 필요합니당.
+    publicPath: '/',
     // dist 값을 정리 후 적용합니다.
     clean: true,
   },
@@ -45,4 +47,8 @@ module.exports = {
       patterns: [{ from: 'static' }],
     }),
   ],
+  devServer: {
+    // 무조건 index HTML로 이동 될 수 있습니다.
+    historyApiFallback: true
+  }
 }
