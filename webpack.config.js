@@ -17,6 +17,8 @@ module.exports = {
     // path.resolve 필수적임.
     // filename 생략시 entry 파일과 이름이 같습니다.
     path: path.resolve(__dirname, 'dist'),
+    // 도메인 절대경로로 실행 섲렁
+    publicPath: '/',
     // dist 값을 정리 후 적용합니다.
     clean: true,
   },
@@ -45,4 +47,7 @@ module.exports = {
       patterns: [{ from: 'static' }],
     }),
   ],
+  devServer: {
+    historyApiFallback: true
+  }
 }
