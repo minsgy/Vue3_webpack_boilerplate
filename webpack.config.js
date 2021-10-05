@@ -25,6 +25,12 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        // ?! 부정 값 /(?!axios)/
+        exclude: /node_modules/, 
+        use: 'babel-loader'
+      },
+      {
         // [정규표현식].test() <.vue> 일치여부 확인합니다.
         test: /\.vue$/,
         use: 'vue-loader', // .vue 확장자 일 시, vue-loader를 실행합니다.
