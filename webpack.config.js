@@ -38,7 +38,12 @@ module.exports = {
       {
         // loader 순서가 굉장히 중요합니다. 오른쪽에서 왼쪽으로 해석됩니다. 즉 CSS먼저 해석하고 vue style을 적용합니다.
         test: /\.s?css/,
-        use: ['vue-style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          'vue-style-loader',
+          'css-loader', 
+          'postcss-loader',
+          'sass-loader'
+        ],
       },
     ],
   },
